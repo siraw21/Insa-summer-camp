@@ -20,20 +20,30 @@
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="register.html">Register</a></li>
           </ul>
         </nav>
       </div>
     </header>
     <main>
       <div class="container">
-        <h1>Login</h1>
+        <h1>Order Detail</h1>
         <form action="">
-          <label for="name">Name: </label>
+          <label for="payment-method">Payment-Method</label>
+          <select name="" id="payment-method">
+            <option value="">Credit</option>
+            <option value="">Mobile Money</option>
+          </select>
+          <br /><br />
+          <label for="payment-option">Payment Option:</label>
+          <select name="" id="payment-option">
+            <option value="">TeleBirr</option>
+            <option value="">CBEBirr</option></select
+          ><br /><br />
+          <label for="post">Post Code:</label>
+          <input type="number" /><br /><br />
+          <label for="address"> Address </label>
           <input type="text" /><br /><br />
-          <label for="password">Password: </label>
-          <input type="password" /><br /><br />
-          <button>Login</button>
+          <button>send</button>
         </form>
       </div>
     </main>
