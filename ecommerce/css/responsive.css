@@ -1,0 +1,50 @@
+@media (min-width: 768px) {
+  .header-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    flex-shrink: 0;
+  }
+
+  .search-bar {
+    flex: 1;
+    max-width: 500px;
+  }
+
+  nav ul {
+    gap: var(--space-lg);
+  }
+
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-container {
+    gap: var(--space-xl);
+  }
+
+  .search-bar {
+    max-width: 600px;
+  }
+
+  .products {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

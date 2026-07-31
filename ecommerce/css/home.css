@@ -1,0 +1,41 @@
+.hero {
+  padding-block: var(--space-2xl);
+}
+
+.hero-content h1 {
+  margin-bottom: var(--space-md);
+}
+
+.hero-content p {
+  max-width: 600px;
+}
+
+.hero-content .btn {
+  width: fit-content;
+}
+
+.about {
+  text-align: center;
+}
+
+.about p {
+  max-width: 700px;
+  margin-inline: auto;
+  margin-top: var(--space-md);
+}
+
+.location h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.testimonials h3 {
+  margin-bottom: var(--space-lg);
+}
+
+.testimonials .card {
+  height: 100%;
+}
+
+.testimonials .card-content {
+  text-align: center;
+}

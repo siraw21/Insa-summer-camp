@@ -1,0 +1,146 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.8rem 1.5rem;
+
+  border: none;
+  border-radius: var(--radius-md);
+
+  background: var(--clr-primary);
+  color: var(--clr-surface);
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--clr-primary-dark);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.products {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.card {
+  background: var(--clr-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: var(--space-md);
+}
+
+.card-content h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.card-content p {
+  margin-bottom: var(--space-md);
+}
+
+.card-content .btn {
+  margin-top: var(--space-md);
+}
+
+.price {
+  display: block;
+  margin-bottom: var(--space-md);
+  color: var(--clr-primary);
+  font-size: var(--fs-md);
+  font-weight: bold;
+}
+
+.filters {
+  display: flex;
+  gap: var(--space-sm);
+  overflow-x: auto;
+  padding-block: var(--space-lg);
+}
+
+.filters button {
+  padding: 0.7rem 1.2rem;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-round);
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.filters button:hover,
+.filters .active {
+  background: var(--clr-primary);
+  color: var(--clr-surface);
+  border-color: var(--clr-primary);
+}
+
+.form-card {
+  max-width: 450px;
+  margin-inline: auto;
+  background: var(--clr-surface);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  background: var(--clr-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.hero-image img {
+  border-radius: var(--radius-lg);
+}
+
+.cards {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.location iframe {
+  border-radius: var(--radius-md);
+  min-height: 300px;
+}

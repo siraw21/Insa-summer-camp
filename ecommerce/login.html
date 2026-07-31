@@ -3,44 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
-    <title>Login</title>
+
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <title>Login | Merkato Ecommerce</title>
   </head>
+
   <body>
     <header>
       <div class="container header-container">
         <div class="brand">
-          <img class="logo" src="images/logo.jpg" alt="logo" />
-          <span class="brand-name">Merkato Ecommerce</span>
+          <img
+            class="logo"
+            src="images/logo.jpg"
+            alt="Merkato Ecommerce Logo"
+          />
+
+          <span class="brand-name"> Merkato Ecommerce </span>
         </div>
+
         <nav>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="register.html">Register</a></li>
+            <li>
+              <a href="index.html"> Home </a>
+            </li>
+
+            <li>
+              <a href="register.html"> Register </a>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
+
     <main>
       <div class="container">
-        <h1>Login</h1>
-        <form action="">
-          <label for="name">Name: </label>
-          <input type="text" /><br /><br />
-          <label for="password">Password: </label>
-          <input type="password" /><br /><br />
-          <button>Login</button>
-        </form>
+        <section class="auth-section">
+          <div class="auth-card">
+            <h1>Login</h1>
+
+            <form class="auth-form" action="">
+              <div class="form-group">
+                <label for="username"> Username </label>
+
+                <input type="text" id="username" placeholder="Enter username" />
+              </div>
+
+              <div class="form-group">
+                <label for="password"> Password </label>
+
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Enter password"
+                />
+              </div>
+
+              <button class="btn btn-block">Login</button>
+            </form>
+
+            <p class="auth-link">
+              Don't have an account?
+
+              <a href="register.html"> Register </a>
+            </p>
+          </div>
+        </section>
       </div>
     </main>
-    <br /><br />
+
     <footer>
       <div class="container">
-        Merkato Ecommerce <span id="foot-year">2018E.C</span>
+        Merkato Ecommerce
+
+        <span> 2018 E.C </span>
       </div>
     </footer>
   </body>
