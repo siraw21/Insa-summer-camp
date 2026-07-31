@@ -49,43 +49,28 @@
     <main>
       <div class="container">
         <section class="cart-section">
-          <h1 class="page-title">Shopping Cart</h1>
+          <h1>Your Cart</h1>
 
-          <div class="table-wrapper">
-            <table class="cart-table">
-              <thead>
-                <tr>
-                  <th>Product</th>
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+            </thead>
 
-                  <th>Quantity</th>
+            <tbody id="cart-items">
+              <!-- JavaScript will insert rows here -->
+            </tbody>
+          </table>
 
-                  <th>Price</th>
+          <h2 id="cart-total">Total: 0 ETB</h2>
 
-                  <th>Option</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="cart-product">
-                      <img src="images/hp.jpg" alt="HP Laptop" />
-
-                      <span> HP Laptop </span>
-                    </div>
-                  </td>
-
-                  <td>1</td>
-
-                  <td>85,000 ETB</td>
-
-                  <td>
-                    <a href="order.html" class="btn"> Order </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <a href="order.html" class="btn"> Proceed To Order </a>
         </section>
 
         <section class="order-summary">
@@ -105,7 +90,6 @@
 
           <div class="summary-total">
             <span> Total </span>
-
             <span> 85,000 ETB </span>
           </div>
 
@@ -121,5 +105,8 @@
         <span> 2018 E.C </span>
       </div>
     </footer>
+    <script src="js/storage.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

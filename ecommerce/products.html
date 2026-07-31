@@ -67,96 +67,93 @@
         <section class="products-filter">
           <div class="filters">
             <button class="active">All Categories</button>
-
             <button>Phones</button>
-
             <button>Computers</button>
-
             <button>Tablets</button>
-
             <button>Accessories</button>
           </div>
         </section>
 
         <section class="products-section">
           <div class="products">
-            <article class="card product-card">
-              <img src="images/desk1.jpg" alt="Desktop Computer" />
-
+            <article
+              class="card product-card"
+              data-id="1"
+              data-name="Desktop"
+              data-price="100000"
+              data-image="images/desk1.jpg"
+            >
+              <img src="images/desk1.jpg" alt="Desktop" />
               <div class="card-content">
-                <h3>Desktop Computer</h3>
-
-                <span class="price"> 100,000 ETB </span>
-
-                <div class="product-actions">
-                  <a href="cart.html" class="btn"> Add To Cart </a>
-
-                  <a href="product-details.html" class="btn"> Detail </a>
-                </div>
+                <h3>Desktop</h3>
+                <span class="price">100,000 ETB</span>
+                <button class="btn add-to-cart">Add To Cart</button>
+                <button class="btn">Detail</button>
               </div>
             </article>
 
-            <article class="card product-card">
+            <article
+              class="card product-card"
+              data-id="2"
+              data-name="HP Laptop"
+              data-price="85000"
+              data-image="images/hp.jpg"
+            >
               <img src="images/hp.jpg" alt="HP Laptop" />
-
               <div class="card-content">
                 <h3>HP Laptop</h3>
-
-                <span class="price"> 85,000 ETB </span>
-
-                <div class="product-actions">
-                  <a href="cart.html" class="btn"> Add To Cart </a>
-
-                  <a href="product-details.html" class="btn"> Detail </a>
-                </div>
+                <span class="price">85,000 ETB</span>
+                <button class="btn add-to-cart">Add To Cart</button>
+                <button class="btn">Detail</button>
               </div>
             </article>
 
-            <article class="card product-card">
-              <img src="images/usb.jpg" alt="USB" />
-
+            <article
+              class="card product-card"
+              data-id="3"
+              data-name="USB Flash Drive"
+              data-price="1500"
+              data-image="images/usb.jpg"
+            >
+              <img src="images/usb.jpg" alt="USB Flash Drive" />
               <div class="card-content">
-                <h3>USB</h3>
-
-                <span class="price"> 1500 ETB </span>
-
-                <div class="product-actions">
-                  <a href="cart.html" class="btn"> Add To Cart </a>
-
-                  <a href="product-details.html" class="btn"> Detail </a>
-                </div>
+                <h3>USB Flash Drive</h3>
+                <span class="price">1,500 ETB</span>
+                <button class="btn add-to-cart">Add To Cart</button>
+                <button class="btn">Detail</button>
               </div>
             </article>
 
-            <article class="card product-card">
+            <article
+              class="card product-card"
+              data-id="4"
+              data-name="Mobile Charger"
+              data-price="1500"
+              data-image="images/mob-char.jpg"
+            >
               <img src="images/mob-char.jpg" alt="Mobile Charger" />
 
               <div class="card-content">
                 <h3>Mobile Charger</h3>
-
-                <span class="price"> 1500 ETB </span>
-
-                <div class="product-actions">
-                  <a href="cart.html" class="btn"> Add To Cart </a>
-
-                  <a href="product-details.html" class="btn"> Detail </a>
-                </div>
+                <span class="price">1,500 ETB</span>
+                <button class="btn add-to-cart">Add To Cart</button>
+                <button class="btn">Detail</button>
               </div>
             </article>
 
-            <article class="card product-card">
+            <article
+              class="card product-card"
+              data-id="5"
+              data-name="iPhone"
+              data-price="95000"
+              data-image="images/iphone.jpg"
+            >
               <img src="images/iphone.jpg" alt="iPhone" />
-
               <div class="card-content">
                 <h3>iPhone</h3>
-
-                <span class="price"> 1500 ETB </span>
-
-                <div class="product-actions">
-                  <a href="cart.html" class="btn"> Add To Cart </a>
-
-                  <a href="product-details.html" class="btn"> Detail </a>
-                </div>
+                <span class="price">95,000 ETB</span>
+                <button class="btn add-to-cart">Add To Cart</button>
+                <button class="btn">Detail</button>
               </div>
             </article>
           </div>
@@ -171,5 +168,8 @@
         <span> 2018 E.C </span>
       </div>
     </footer>
+    <script src="js/storage.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
