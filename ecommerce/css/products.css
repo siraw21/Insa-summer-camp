@@ -1,5 +1,5 @@
 .products-page-title {
-  margin-bottom: var(--space-lg);
+  margin-top: var(--space-lg);
 }
 
 .products-filter {
@@ -8,12 +8,6 @@
 
 .products-section {
   padding-top: 0;
-}
-
-.product-card .card-content {
-  display: flex;
-
-  flex-direction: column;
 }
 
 .product-card h3 {
@@ -37,6 +31,7 @@
 
 .product-detail-image img {
   border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 .product-detail-content {

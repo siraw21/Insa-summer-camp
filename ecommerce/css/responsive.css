@@ -22,12 +22,14 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .products {
-    grid-template-columns: repeat(2, 1fr);
+  .product-detail {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
   }
 
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
+  .order-summary {
+    margin-left: auto;
+    margin-right: 0;
   }
 }
 
@@ -38,13 +40,5 @@
 
   .search-bar {
     max-width: 600px;
-  }
-
-  .products {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .cards {
-    grid-template-columns: repeat(3, 1fr);
   }
 }

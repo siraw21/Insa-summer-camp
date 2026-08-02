@@ -1,43 +1,63 @@
 :root {
-  --clr-primary: #2563eb;
-  --clr-primary-dark: #1d4ed8;
-  --clr-background: #f8fafc;
+  --clr-gray-50: #fafafa;
+  --clr-gray-100: #f4f4f5;
+  --clr-gray-200: #e4e4e7;
+  --clr-gray-300: #d4d4d8;
+  --clr-gray-400: #a1a1aa;
+  --clr-gray-500: #71717a;
+  --clr-gray-600: #52525b;
+  --clr-gray-700: #3f3f46;
+  --clr-gray-800: #27272a;
+  --clr-gray-900: #18181b;
+
+  --clr-primary: var(--clr-gray-900);
+  --clr-primary-dark: #000000;
+
+  --clr-background: var(--clr-gray-50);
   --clr-surface: #ffffff;
-  --clr-text: #1f2937;
-  --clr-text-light: #6b7280;
-  --clr-border: #d1d5db;
+  --clr-text: var(--clr-gray-900);
+  --clr-text-light: var(--clr-gray-500);
+  --clr-border: var(--clr-gray-200);
+  --clr-border-hover: var(--clr-gray-300);
+
   --clr-success: #16a34a;
   --clr-danger: #dc2626;
-  --clr-warning: #f59e0b;
+  --clr-warning: #b45309;
+
+  --clr-focus-ring: rgba(24, 24, 27, 0.15);
 
   --font-body:
     "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
   --font-heading: "Space Grotesk", sans-serif;
 
-  --fs-sm: 0.875rem;
-  --fs-base: 1rem;
-  --fs-md: 1.125rem;
-  --fs-lg: 1.5rem;
-  --fs-xl: 2rem;
-  --fs-2xl: 2.5rem;
+  --fs-sm: clamp(0.8rem, 0.78rem + 0.1vw, 0.875rem);
+  --fs-base: clamp(0.95rem, 0.92rem + 0.15vw, 1rem);
+  --fs-md: clamp(1.05rem, 1rem + 0.25vw, 1.125rem);
+  --fs-lg: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --fs-xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --fs-2xl: clamp(1.75rem, 1.4rem + 1.8vw, 2.5rem);
 
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
+  --space-xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --space-2xl: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
 
   --radius-sm: 0.375rem;
-  --radius-md: 0.75rem;
+  --radius-md: 0.625rem;
   --radius-lg: 1rem;
   --radius-round: 999px;
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.12);
+  --shadow-sm:
+    0 1px 2px rgba(24, 24, 27, 0.04), 0 1px 3px rgba(24, 24, 27, 0.06);
+  --shadow-md: 0 8px 20px rgba(24, 24, 27, 0.08);
+  --shadow-lg: 0 16px 40px rgba(24, 24, 27, 0.14);
 
   --container-width: 1200px;
 
-  --transition: 0.25s ease;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: 0.2s var(--ease);
+  --transition-slow: 0.4s var(--ease);
 }

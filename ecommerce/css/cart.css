@@ -4,6 +4,7 @@
 
 .cart-table {
   width: 100%;
+  min-width: 480px;
   background: var(--clr-surface);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -11,7 +12,7 @@
 }
 
 .cart-table th {
-  background: #f1f5f9;
+  background: var(--clr-gray-100);
   font-weight: 600;
 }
 
@@ -33,11 +34,16 @@
   border-radius: var(--radius-sm);
 }
 
+/* Full-width and centered by default so it doesn't look squeezed on
+   phones; responsive.css moves it to the right edge once there's room
+   at 768px+. */
 .order-summary {
   margin-top: var(--space-xl);
+  width: 100%;
   max-width: 400px;
-  margin-left: auto;
+  margin-inline: auto;
   background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
   padding: var(--space-lg);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
@@ -51,6 +57,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: var(--space-sm);
+  color: var(--clr-text-light);
 }
 
 .summary-total {
@@ -59,13 +66,15 @@
   margin-top: var(--space-md);
   font-weight: 700;
   font-size: var(--fs-md);
+  color: var(--clr-text);
 }
 
 .order-form {
   max-width: 500px;
   margin-inline: auto;
   background: var(--clr-surface);
-  padding: var(--space-xl);
+  border: 1px solid var(--clr-border);
+  padding: clamp(1.5rem, 4vw, var(--space-xl));
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
 }

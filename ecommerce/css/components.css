@@ -2,10 +2,11 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  gap: var(--space-sm);
 
   padding: 0.8rem 1.5rem;
 
-  border: none;
+  border: 1px solid transparent;
   border-radius: var(--radius-md);
 
   background: var(--clr-primary);
@@ -17,6 +18,13 @@
 
 .btn:hover {
   background: var(--clr-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .btn-block {
@@ -25,11 +33,16 @@
 
 .products {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
   gap: var(--space-lg);
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -37,7 +50,9 @@
 }
 
 .card:hover {
+  border-color: var(--clr-border-hover);
   box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
 }
 
 .card img {
@@ -47,6 +62,9 @@
 }
 
 .card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: var(--space-md);
 }
 
@@ -59,7 +77,7 @@
 }
 
 .card-content .btn {
-  margin-top: var(--space-md);
+  margin-top: auto;
 }
 
 .price {
@@ -75,6 +93,7 @@
   gap: var(--space-sm);
   overflow-x: auto;
   padding-block: var(--space-lg);
+  scrollbar-width: thin;
 }
 
 .filters button {
@@ -83,6 +102,7 @@
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-round);
   white-space: nowrap;
+  font-weight: 500;
   transition: var(--transition);
 }
 
@@ -97,7 +117,8 @@
   max-width: 450px;
   margin-inline: auto;
   background: var(--clr-surface);
-  padding: var(--space-xl);
+  border: 1px solid var(--clr-border);
+  padding: clamp(1.5rem, 4vw, var(--space-xl));
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
 }
@@ -115,6 +136,7 @@
 .table-wrapper {
   overflow-x: auto;
   background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
 }
@@ -137,10 +159,12 @@
 
 .cards {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
   gap: var(--space-lg);
 }
 
 .location iframe {
   border-radius: var(--radius-md);
   min-height: 300px;
+  box-shadow: var(--shadow-sm);
 }
