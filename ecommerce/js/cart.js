@@ -73,3 +73,17 @@ function addRemoveEvents() {
     });
   });
 }
+
+const checkoutButton = document.getElementById("checkout-btn");
+
+if (checkoutButton) {
+  checkoutButton.addEventListener("click", function (event) {
+    if (!isLoggedIn()) {
+      event.preventDefault();
+
+      alert("Please login before checkout.");
+
+      window.location.href = "login.html";
+    }
+  });
+}

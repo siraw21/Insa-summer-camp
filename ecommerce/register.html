@@ -51,7 +51,7 @@
         <section class="auth-section">
           <div class="auth-card">
             <h1>Register</h1>
-
+            <!-- 
             <form class="auth-form" action="">
               <div class="form-group">
                 <label for="name"> Full Name </label>
@@ -86,6 +86,35 @@
               </div>
 
               <button class="btn btn-block">Register</button>
+            </form> -->
+            <form id="register-form" class="auth-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+
+                <input type="text" id="name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+
+                <input type="email" id="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+
+                <input type="password" id="password" required />
+              </div>
+
+              <div class="form-group">
+                <label for="confirm-password"> Confirm Password </label>
+
+                <input type="password" id="confirm-password" required />
+              </div>
+
+              <button type="submit" class="btn">Register</button>
+
+              <p id="register-message"></p>
             </form>
 
             <p class="auth-link">
@@ -106,6 +135,8 @@
       </div>
     </footer>
 
+    <script src="js/auth.js"></script>
+    <script src="js/register.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
