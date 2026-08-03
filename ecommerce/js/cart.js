@@ -81,9 +81,10 @@ if (checkoutButton) {
     if (!isLoggedIn()) {
       event.preventDefault();
 
-      alert("Please login before checkout.");
+      showToast("Please login before checkout.");
+      // alert("Please login before checkout.");
 
-      window.location.href = "login.html";
+      // window.location.href = "login.html";
     }
   });
 }
