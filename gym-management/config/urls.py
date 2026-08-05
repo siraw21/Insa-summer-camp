@@ -10,8 +10,11 @@ urlpatterns = [
     path("api/v1/members/", include("members.urls")),
     path(
     "api/v1/memberships/",
-    include("memberships.urls"),
-),
+    include("memberships.urls"),),
+    path(
+    "api/v1/payments/",
+    include("payments.urls"),
+     ),
 ]
 
 if settings.DEBUG:
