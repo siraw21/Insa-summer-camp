@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "members",
     "memberships",
     "payments",
+    "dashboard",
 
     
 ]

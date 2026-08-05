@@ -15,6 +15,10 @@ urlpatterns = [
     "api/v1/payments/",
     include("payments.urls"),
      ),
+     path(
+    "api/v1/dashboard/",
+    include("dashboard.urls"),
+),
 ]
 
 if settings.DEBUG:
