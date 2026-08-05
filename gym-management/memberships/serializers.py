@@ -37,6 +37,10 @@ class MembershipSerializer(serializers.ModelSerializer):
         read_only=True,
     )
 
+    is_expired = serializers.BooleanField(
+        read_only=True,
+    )
+
     class Meta:
         model = Membership
 
@@ -50,6 +54,7 @@ class MembershipSerializer(serializers.ModelSerializer):
             "start_date",
             "end_date",
             "status",
+            "is_expired",
             "created_at",
             "updated_at",
         ]
@@ -59,6 +64,8 @@ class MembershipSerializer(serializers.ModelSerializer):
             "member_number",
             "member_name",
             "plan_name",
+            "is_expired",
+            "status",
             "created_at",
             "updated_at",
         ]

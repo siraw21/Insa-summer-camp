@@ -1,5 +1,5 @@
 from decimal import Decimal
-
+from datetime import date
 from django.core.validators import MinValueValidator
 from django.db import models
 
@@ -79,8 +79,22 @@ class Membership(models.Model):
         auto_now=True,
     )
 
+    @property
+    def is_expired(self):
+        return self.end_date < date.today()
+
+    def update_expiration_status(self):
+      if (
+          self.status == self.Status.ACTIVE
+          and self.end_date < date.today()
+      ):
+          self.status = self.Status.EXPIRED
+          self.save(update_fields=["status", "updated_at"])
+
     def __str__(self):
         return (
             f"{self.member.member_number} - "
             f"{self.plan.name}"
         )
+
+    
