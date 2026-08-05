@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Gym Management - Members</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <h1>Gym Management</h1>
+
+      <button id="logout-btn">Logout</button>
+    </header>
+
+    <main class="container">
+      <div class="page-header">
+        <div>
+          <h2>Members</h2>
+          <p>Manage gym members</p>
+        </div>
+
+        <button id="add-member-btn">+ Add Member</button>
+      </div>
+
+      <div id="loading">Loading members...</div>
+
+      <p id="error-message"></p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Member Number</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="members-table-body"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/members.js"></script>
+  </body>
+</html>

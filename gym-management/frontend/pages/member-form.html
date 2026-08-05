@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Add Member</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <h1>Gym Management</h1>
+
+      <button id="logout-btn">Logout</button>
+    </header>
+
+    <main class="container">
+      <div class="page-header">
+        <div>
+          <h2>Add Member</h2>
+          <p>Register a new gym member</p>
+        </div>
+
+        <a href="members.html"> Back to Members </a>
+      </div>
+
+      <form id="member-form">
+        <div class="form-group">
+          <label for="first-name"> First Name </label>
+
+          <input type="text" id="first-name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="last-name"> Last Name </label>
+
+          <input type="text" id="last-name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone"> Phone </label>
+
+          <input type="text" id="phone" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email"> Email </label>
+
+          <input type="email" id="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="gender"> Gender </label>
+
+          <select id="gender">
+            <option value="">Select gender</option>
+
+            <option value="MALE">Male</option>
+
+            <option value="FEMALE">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date-of-birth"> Date of Birth </label>
+
+          <input type="date" id="date-of-birth" />
+        </div>
+
+        <div class="form-group">
+          <label for="address"> Address </label>
+
+          <input type="text" id="address" />
+        </div>
+
+        <div class="form-group">
+          <label for="emergency-name"> Emergency Contact Name </label>
+
+          <input type="text" id="emergency-name" />
+        </div>
+
+        <div class="form-group">
+          <label for="emergency-phone"> Emergency Contact Phone </label>
+
+          <input type="text" id="emergency-phone" />
+        </div>
+
+        <div class="form-group">
+          <label for="profile-image"> Profile Image </label>
+
+          <input type="file" id="profile-image" accept="image/*" />
+        </div>
+
+        <button type="submit">Register Member</button>
+
+        <p id="error-message"></p>
+      </form>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/member-form.js"></script>
+  </body>
+</html>
