@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     # "Pillow"
     "accounts",
     "members",
+    "memberships",
+    
+    
 ]
 
 AUTH_USER_MODEL = "accounts.User"
