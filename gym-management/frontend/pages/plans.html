@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Plans | FitTrack</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- SIDEBAR -->
+
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <a href="dashboard.html" class="brand">
+            <span class="brand-mark">F</span>
+            <span class="brand-text">FitTrack</span>
+          </a>
+        </div>
+
+        <nav class="sidebar-nav">
+          <p class="nav-section-title">Management</p>
+
+          <ul class="nav-list">
+            <li>
+              <a href="dashboard.html" class="nav-link">
+                <span class="nav-icon">▦</span>
+                <span class="nav-label">Dashboard</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="members.html" class="nav-link">
+                <span class="nav-icon">◉</span>
+                <span class="nav-label">Members</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="memberships.html" class="nav-link">
+                <span class="nav-icon">◆</span>
+                <span class="nav-label">Memberships</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="plans.html" class="nav-link active">
+                <span class="nav-icon">▤</span>
+                <span class="nav-label">Plans</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="payments.html" class="nav-link">
+                <span class="nav-icon">$</span>
+                <span class="nav-label">Payments</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button id="logout-btn" class="btn btn-secondary" style="width: 100%">
+            Logout
+          </button>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+
+      <main class="main">
+        <header class="topbar">
+          <div class="page-title">Plans</div>
+
+          <div class="user-menu">
+            <div class="user-avatar">A</div>
+
+            <div class="user-info">
+              <span class="user-name">Admin</span>
+              <span class="user-role">Gym Owner</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="page-content">
+          <div class="page-header">
+            <div>
+              <h1>Membership Plans</h1>
+              <p>Create and manage gym subscription plans.</p>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 340px 1fr;
+              gap: 20px;
+              align-items: start;
+            "
+          >
+            <!-- CREATE PLAN -->
+
+            <div class="card">
+              <div class="card-header">
+                <h2>Create Plan</h2>
+              </div>
+
+              <div class="card-body">
+                <form id="plan-form">
+                  <div class="form-group">
+                    <label for="plan-name">Plan name</label>
+                    <input id="plan-name" required />
+                  </div>
+
+                  <div class="form-group" style="margin-top: 16px">
+                    <label for="duration-days">Duration in days</label>
+                    <input id="duration-days" type="number" min="1" required />
+                  </div>
+
+                  <div class="form-group" style="margin-top: 16px">
+                    <label for="price">Price in ETB</label>
+                    <input
+                      id="price"
+                      type="number"
+                      min="0"
+                      step="0.01"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group" style="margin-top: 16px">
+                    <label for="description">Description</label>
+                    <textarea id="description"></textarea>
+                  </div>
+
+                  <button
+                    class="btn btn-primary"
+                    type="submit"
+                    style="width: 100%; margin-top: 20px"
+                  >
+                    Save Plan
+                  </button>
+
+                  <div
+                    id="error-message"
+                    class="alert alert-error"
+                    style="display: none; margin-top: 14px"
+                  ></div>
+                </form>
+              </div>
+            </div>
+
+            <!-- AVAILABLE PLANS -->
+
+            <div class="card">
+              <div class="card-header">
+                <h2>Available Plans</h2>
+              </div>
+
+              <div class="card-body">
+                <div id="plans-list" class="plan-list">
+                  <div class="loading">Loading plans...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/plans.js"></script>
+  </body>
+</html>

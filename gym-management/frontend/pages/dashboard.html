@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard | FitTrack</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- SIDEBAR -->
+
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <a href="dashboard.html" class="brand">
+            <span class="brand-mark"> F </span>
+
+            <span class="brand-text"> FitTrack </span>
+          </a>
+        </div>
+
+        <nav class="sidebar-nav">
+          <p class="nav-section-title">Management</p>
+
+          <ul class="nav-list">
+            <li>
+              <a href="dashboard.html" class="nav-link active">
+                <span class="nav-icon"> ▦ </span>
+
+                <span class="nav-label"> Dashboard </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="members.html" class="nav-link">
+                <span class="nav-icon"> ◉ </span>
+
+                <span class="nav-label"> Members </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="memberships.html" class="nav-link">
+                <span class="nav-icon"> ◆ </span>
+
+                <span class="nav-label"> Memberships </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="plans.html" class="nav-link">
+                <span class="nav-icon"> ▤ </span>
+
+                <span class="nav-label"> Plans </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="payments.html" class="nav-link">
+                <span class="nav-icon"> $ </span>
+
+                <span class="nav-label"> Payments </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button id="logout-btn" class="btn btn-secondary" style="width: 100%">
+            Logout
+          </button>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+
+      <main class="main">
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+          <div class="page-title">Dashboard</div>
+
+          <div class="user-menu">
+            <div class="user-avatar">A</div>
+
+            <div class="user-info">
+              <span class="user-name"> Admin </span>
+
+              <span class="user-role"> Gym Owner </span>
+            </div>
+          </div>
+        </header>
+
+        <!-- CONTENT -->
+
+        <section class="page-content">
+          <div class="page-header">
+            <div>
+              <h1>Dashboard</h1>
+
+              <p>Overview of your gym's current activity.</p>
+            </div>
+          </div>
+
+          <div
+            id="error-message"
+            class="alert alert-error"
+            style="display: none"
+          ></div>
+
+          <!-- STATISTICS -->
+
+          <section class="stats-grid">
+            <article class="card stat-card">
+              <span class="stat-label"> Total Members </span>
+
+              <p id="total-members" class="stat-value">—</p>
+
+              <p class="stat-description">All registered members</p>
+            </article>
+
+            <article class="card stat-card">
+              <span class="stat-label"> Active Members </span>
+
+              <p id="active-members" class="stat-value">—</p>
+
+              <p class="stat-description">Members with active status</p>
+            </article>
+
+            <article class="card stat-card">
+              <span class="stat-label"> Expired Members </span>
+
+              <p id="expired-members" class="stat-value">—</p>
+
+              <p class="stat-description">Members with expired membership</p>
+            </article>
+
+            <article class="card stat-card">
+              <span class="stat-label"> Monthly Revenue </span>
+
+              <p id="monthly-revenue" class="stat-value">—</p>
+
+              <p class="stat-description">Revenue generated this month</p>
+            </article>
+          </section>
+
+          <!-- SECONDARY INFORMATION -->
+
+          <section class="card">
+            <div class="card-header">
+              <h2>Memberships Expiring Soon</h2>
+
+              <a href="memberships.html" class="btn btn-secondary btn-sm">
+                View Memberships
+              </a>
+            </div>
+
+            <div class="card-body">
+              <p id="expiring-memberships" class="stat-value">—</p>
+
+              <p class="stat-description">
+                Memberships that require attention.
+              </p>
+            </div>
+          </section>
+
+          <!-- QUICK ACTIONS -->
+
+          <section class="card" style="margin-top: 20px">
+            <div class="card-header">
+              <h2>Quick Actions</h2>
+            </div>
+
+            <div class="card-body">
+              <div class="action-group">
+                <a href="member-form.html" class="btn btn-primary">
+                  + Add Member
+                </a>
+
+                <a href="memberships.html" class="btn btn-secondary">
+                  Assign Membership
+                </a>
+
+                <a href="payment-form.html" class="btn btn-secondary">
+                  Record Payment
+                </a>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>
