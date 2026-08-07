@@ -2,30 +2,224 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Member Details</title>
+    <title>Member Profile | FitTrack</title>
 
     <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <body>
-    <header class="navbar">
-      <h1>Gym Management</h1>
+    <div class="app">
+      <!-- SIDEBAR -->
 
-      <button id="logout-btn">Logout</button>
-    </header>
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <a href="dashboard.html" class="brand">
+            <span class="brand-mark">F</span>
+            <span class="brand-text">FitTrack</span>
+          </a>
+        </div>
 
-    <main class="container">
-      <a href="members.html"> ← Back to Members </a>
+        <nav class="sidebar-nav">
+          <p class="nav-section-title">Management</p>
 
-      <section id="member-details">Loading...</section>
+          <ul class="nav-list">
+            <li>
+              <a href="dashboard.html" class="nav-link">
+                <span class="nav-icon">▦</span>
+                <span class="nav-label">Dashboard</span>
+              </a>
+            </li>
 
-      <p id="error-message"></p>
-    </main>
+            <li>
+              <a href="members.html" class="nav-link active">
+                <span class="nav-icon">◉</span>
+                <span class="nav-label">Members</span>
+              </a>
+            </li>
 
-    <script src="js/api.js"></script>
-    <script src="js/member-detail.js"></script>
+            <li>
+              <a href="memberships.html" class="nav-link">
+                <span class="nav-icon">◆</span>
+                <span class="nav-label">Memberships</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="plans.html" class="nav-link">
+                <span class="nav-icon">▤</span>
+                <span class="nav-label">Plans</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="payments.html" class="nav-link">
+                <span class="nav-icon">$</span>
+                <span class="nav-label">Payments</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button id="logout-btn" class="btn btn-secondary" style="width: 100%">
+            Logout
+          </button>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+
+      <main class="main">
+        <header class="topbar">
+          <div class="page-title">Member Profile</div>
+
+          <div class="user-menu">
+            <div class="user-avatar">A</div>
+
+            <div class="user-info">
+              <span class="user-name"> Admin </span>
+
+              <span class="user-role"> Gym Owner </span>
+            </div>
+          </div>
+        </header>
+
+        <section class="page-content">
+          <div class="page-header">
+            <div>
+              <a href="members.html" class="btn btn-secondary btn-sm">
+                ← Back to Members
+              </a>
+            </div>
+
+            <div class="action-group">
+              <a id="edit-member-btn" href="#" class="btn btn-primary">
+                Edit Member
+              </a>
+            </div>
+          </div>
+
+          <div
+            id="error-message"
+            class="alert alert-error"
+            style="display: none"
+          ></div>
+
+          <div id="loading" class="loading">Loading member...</div>
+
+          <div id="member-content" style="display: none">
+            <!-- PROFILE HEADER -->
+
+            <section class="card">
+              <div class="card-body">
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    flex-wrap: wrap;
+                  "
+                >
+                  <div
+                    id="member-avatar"
+                    class="member-avatar"
+                    style="width: 80px; height: 80px; font-size: 1.2rem"
+                  ></div>
+
+                  <div>
+                    <h1
+                      id="member-name"
+                      style="font-size: 1.5rem; margin-bottom: 4px"
+                    >
+                      —
+                    </h1>
+
+                    <p
+                      id="member-number"
+                      style="color: var(--text-muted); margin-bottom: 8px"
+                    >
+                      —
+                    </p>
+
+                    <span id="member-status" class="badge"> — </span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- PERSONAL INFORMATION -->
+
+            <section class="card" style="margin-top: 20px">
+              <div class="card-header">
+                <h2>Personal Information</h2>
+              </div>
+
+              <div class="card-body">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label> First Name </label>
+
+                    <p id="first-name">—</p>
+                  </div>
+
+                  <div class="form-group">
+                    <label> Last Name </label>
+
+                    <p id="last-name">—</p>
+                  </div>
+
+                  <div class="form-group">
+                    <label> Date of Birth </label>
+
+                    <p id="date-of-birth">—</p>
+                  </div>
+
+                  <div class="form-group">
+                    <label> Gender </label>
+
+                    <p id="gender">—</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- CONTACT INFORMATION -->
+
+            <section class="card" style="margin-top: 20px">
+              <div class="card-header">
+                <h2>Contact Information</h2>
+              </div>
+
+              <div class="card-body">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label> Phone </label>
+
+                    <p id="phone">—</p>
+                  </div>
+
+                  <div class="form-group">
+                    <label> Email </label>
+
+                    <p id="email">—</p>
+                  </div>
+
+                  <div class="form-group full-width">
+                    <label> Address </label>
+
+                    <p id="address">—</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/member-detail.js"></script>
   </body>
 </html>

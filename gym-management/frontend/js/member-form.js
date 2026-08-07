@@ -1,13 +1,23 @@
 const memberForm = document.getElementById("member-form");
 const errorMessage = document.getElementById("error-message");
+const submitButton = document.getElementById("submit-btn");
+const pageTitle = document.getElementById("page-title");
+const pageDescription = document.getElementById("page-description");
 
 const params = new URLSearchParams(window.location.search);
 const memberId = params.get("id");
 
-const heading = document.querySelector("h2");
+requireAuthentication();
 
 if (memberId) {
-  heading.textContent = "Edit Member";
+  pageTitle.textContent = "Edit Member";
+  pageDescription.textContent = "Update this member's information.";
+  submitButton.textContent = "Update Member";
+}
+
+function showError(message) {
+  errorMessage.textContent = message;
+  errorMessage.style.display = "block";
 }
 
 async function loadMember() {
@@ -38,12 +48,14 @@ async function loadMember() {
     document.getElementById("emergency-phone").value =
       member.emergency_contact_phone || "";
   } catch (error) {
-    errorMessage.textContent = error.message;
+    showError(error.message);
   }
 }
 
 memberForm.addEventListener("submit", async (event) => {
   event.preventDefault();
+
+  errorMessage.style.display = "none";
 
   const formData = new FormData();
 
@@ -81,6 +93,9 @@ memberForm.addEventListener("submit", async (event) => {
   }
 
   try {
+    submitButton.disabled = true;
+    submitButton.textContent = memberId ? "Updating..." : "Registering...";
+
     const token = getAccessToken();
 
     const url = memberId
@@ -105,7 +120,10 @@ memberForm.addEventListener("submit", async (event) => {
 
     window.location.href = "members.html";
   } catch (error) {
-    errorMessage.textContent = error.message;
+    showError(error.message);
+
+    submitButton.disabled = false;
+    submitButton.textContent = memberId ? "Update Member" : "Register Member";
   }
 });
 

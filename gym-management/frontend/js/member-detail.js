@@ -1,10 +1,22 @@
-const memberDetails = document.getElementById("member-details");
+requireAuthentication();
+
+const loading = document.getElementById("loading");
+
+const content = document.getElementById("member-content");
 
 const errorMessage = document.getElementById("error-message");
 
-const params = new URLSearchParams(window.location.search);
+const logoutButton = document.getElementById("logout-btn");
 
-const memberId = params.get("id");
+const editButton = document.getElementById("edit-member-btn");
+
+const memberId = new URLSearchParams(window.location.search).get("id");
+
+if (!memberId) {
+  showError("Member ID is missing.");
+} else {
+  loadMember();
+}
 
 async function loadMember() {
   try {
@@ -12,49 +24,90 @@ async function loadMember() {
 
     renderMember(member);
   } catch (error) {
-    errorMessage.textContent = error.message;
+    showError(error.message);
+  } finally {
+    loading.style.display = "none";
   }
 }
 
 function renderMember(member) {
-  memberDetails.innerHTML = `
+  const fullName = `${member.first_name} ${member.last_name}`;
 
-        <h2>
-            ${member.first_name}
-            ${member.last_name}
-        </h2>
+  const initials =
+    `${member.first_name?.[0] || ""}${member.last_name?.[0] || ""}`.toUpperCase();
 
-        <p>
-            <strong>Member Number:</strong>
-            ${member.member_number}
-        </p>
+  /*
+   * Basic profile information
+   */
 
-        <p>
-            <strong>Phone:</strong>
-            ${member.phone}
-        </p>
+  document.getElementById("member-name").textContent = fullName;
 
-        <p>
-            <strong>Email:</strong>
-            ${member.email || "N/A"}
-        </p>
+  document.getElementById("member-number").textContent =
+    member.member_number || "No member number";
 
-        <p>
-            <strong>Gender:</strong>
-            ${member.gender || "N/A"}
-        </p>
+  document.getElementById("first-name").textContent = member.first_name || "—";
 
-        <p>
-            <strong>Address:</strong>
-            ${member.address || "N/A"}
-        </p>
+  document.getElementById("last-name").textContent = member.last_name || "—";
 
-        <p>
-            <strong>Status:</strong>
-            ${member.status}
-        </p>
+  document.getElementById("phone").textContent = member.phone || "—";
 
+  document.getElementById("email").textContent = member.email || "—";
+
+  document.getElementById("address").textContent = member.address || "—";
+
+  document.getElementById("date-of-birth").textContent =
+    member.date_of_birth || "—";
+
+  document.getElementById("gender").textContent = member.gender || "—";
+
+  /*
+   * Status
+   */
+
+  const statusElement = document.getElementById("member-status");
+
+  const status = member.status || "Unknown";
+
+  statusElement.textContent = status;
+
+  statusElement.className = "badge";
+
+  if (status.toLowerCase() === "active") {
+    statusElement.classList.add("badge-active");
+  } else {
+    statusElement.classList.add("badge-expired");
+  }
+
+  /*
+   * Profile image
+   */
+
+  const avatar = document.getElementById("member-avatar");
+
+  if (member.profile_image) {
+    avatar.innerHTML = `
+      <img
+        src="${member.profile_image}"
+        alt="${fullName}"
+      >
     `;
+  } else {
+    avatar.textContent = initials;
+  }
+
+  /*
+   * Edit link
+   */
+
+  editButton.href = `member-form.html?id=${member.id}`;
+
+  content.style.display = "block";
 }
 
-loadMember();
+function showError(message) {
+  errorMessage.textContent = message;
+
+  errorMessage.style.display = "block";
+}
+
+logoutButton.addEventListener("click", logout);

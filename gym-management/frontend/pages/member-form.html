@@ -4,102 +4,186 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Add Member</title>
+    <title>Add Member | FitTrack</title>
 
     <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <body>
-    <header class="navbar">
-      <h1>Gym Management</h1>
+    <div class="app">
+      <!-- SIDEBAR -->
 
-      <button id="logout-btn">Logout</button>
-    </header>
-
-    <main class="container">
-      <div class="page-header">
-        <div>
-          <h2>Add Member</h2>
-          <p>Register a new gym member</p>
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <a href="dashboard.html" class="brand">
+            <span class="brand-mark">F</span>
+            <span class="brand-text">FitTrack</span>
+          </a>
         </div>
 
-        <a href="members.html"> Back to Members </a>
-      </div>
+        <nav class="sidebar-nav">
+          <p class="nav-section-title">Management</p>
 
-      <form id="member-form">
-        <div class="form-group">
-          <label for="first-name"> First Name </label>
+          <ul class="nav-list">
+            <li>
+              <a href="dashboard.html" class="nav-link">
+                <span class="nav-icon">▦</span>
+                <span class="nav-label">Dashboard</span>
+              </a>
+            </li>
 
-          <input type="text" id="first-name" required />
+            <li>
+              <a href="members.html" class="nav-link active">
+                <span class="nav-icon">◉</span>
+                <span class="nav-label">Members</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="memberships.html" class="nav-link">
+                <span class="nav-icon">◆</span>
+                <span class="nav-label">Memberships</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="plans.html" class="nav-link">
+                <span class="nav-icon">▤</span>
+                <span class="nav-label">Plans</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="payments.html" class="nav-link">
+                <span class="nav-icon">$</span>
+                <span class="nav-label">Payments</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button id="logout-btn" class="btn btn-secondary" style="width: 100%">
+            Logout
+          </button>
         </div>
+      </aside>
 
-        <div class="form-group">
-          <label for="last-name"> Last Name </label>
+      <!-- MAIN -->
 
-          <input type="text" id="last-name" required />
-        </div>
+      <main class="main">
+        <header class="topbar">
+          <div class="page-title">Add Member</div>
 
-        <div class="form-group">
-          <label for="phone"> Phone </label>
+          <div class="user-menu">
+            <div class="user-avatar">A</div>
 
-          <input type="text" id="phone" required />
-        </div>
+            <div class="user-info">
+              <span class="user-name">Admin</span>
+              <span class="user-role">Gym Owner</span>
+            </div>
+          </div>
+        </header>
 
-        <div class="form-group">
-          <label for="email"> Email </label>
+        <section class="page-content">
+          <div class="page-header">
+            <div>
+              <h1 id="page-title">Add Member</h1>
+              <p id="page-description">Register a new gym member.</p>
+            </div>
 
-          <input type="email" id="email" />
-        </div>
+            <a href="members.html" class="btn btn-secondary"> ← Back </a>
+          </div>
 
-        <div class="form-group">
-          <label for="gender"> Gender </label>
+          <div
+            id="error-message"
+            class="alert alert-error"
+            style="display: none"
+          ></div>
 
-          <select id="gender">
-            <option value="">Select gender</option>
+          <div class="card">
+            <div class="card-header">
+              <h2>Member Information</h2>
+            </div>
 
-            <option value="MALE">Male</option>
+            <div class="card-body">
+              <form id="member-form">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" required />
+                  </div>
 
-            <option value="FEMALE">Female</option>
-          </select>
-        </div>
+                  <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" required />
+                  </div>
 
-        <div class="form-group">
-          <label for="date-of-birth"> Date of Birth </label>
+                  <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" required />
+                  </div>
 
-          <input type="date" id="date-of-birth" />
-        </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" />
+                  </div>
 
-        <div class="form-group">
-          <label for="address"> Address </label>
+                  <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender">
+                      <option value="">Select gender</option>
+                      <option value="MALE">Male</option>
+                      <option value="FEMALE">Female</option>
+                    </select>
+                  </div>
 
-          <input type="text" id="address" />
-        </div>
+                  <div class="form-group">
+                    <label for="date-of-birth">Date of Birth</label>
+                    <input type="date" id="date-of-birth" />
+                  </div>
 
-        <div class="form-group">
-          <label for="emergency-name"> Emergency Contact Name </label>
+                  <div class="form-group full-width">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" />
+                  </div>
 
-          <input type="text" id="emergency-name" />
-        </div>
+                  <div class="form-group">
+                    <label for="emergency-name"> Emergency Contact Name </label>
+                    <input type="text" id="emergency-name" />
+                  </div>
 
-        <div class="form-group">
-          <label for="emergency-phone"> Emergency Contact Phone </label>
+                  <div class="form-group">
+                    <label for="emergency-phone">
+                      Emergency Contact Phone
+                    </label>
+                    <input type="text" id="emergency-phone" />
+                  </div>
 
-          <input type="text" id="emergency-phone" />
-        </div>
+                  <div class="form-group full-width">
+                    <label for="profile-image">Profile Image</label>
+                    <input type="file" id="profile-image" accept="image/*" />
+                    <span class="form-help">
+                      Optional. JPG or PNG works best.
+                    </span>
+                  </div>
+                </div>
 
-        <div class="form-group">
-          <label for="profile-image"> Profile Image </label>
+                <div class="form-actions">
+                  <a href="members.html" class="btn btn-secondary"> Cancel </a>
 
-          <input type="file" id="profile-image" accept="image/*" />
-        </div>
+                  <button type="submit" id="submit-btn" class="btn btn-primary">
+                    Register Member
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
 
-        <button type="submit">Register Member</button>
-
-        <p id="error-message"></p>
-      </form>
-    </main>
-
-    <script src="js/api.js"></script>
-    <script src="js/member-form.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/member-form.js"></script>
   </body>
 </html>
