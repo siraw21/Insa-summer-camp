@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Todo App</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <h1>Todo App</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Task</th>
+            <th>Completed</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="task-list">
+          <!-- Tasks will be inserted by TypeScript -->
+        </tbody>
+      </table>
+
+      <form id="task-form">
+        <input
+          id="task-input"
+          type="text"
+          placeholder="Learn TypeScript"
+          required
+        />
+
+        <button type="submit">Add Task</button>
+      </form>
+    </main>
+
+    <script type="module" src="./dist/main.js"></script>
+  </body>
+</html>
